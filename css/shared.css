@@ -81,7 +81,7 @@ nav > a:not(:first-child){
     display: none;
 }
 
-nav > .command:first-of-type::before{
+nav > a:first-of-type::before{
     content: "./";
 }
 
@@ -92,6 +92,7 @@ nav:hover{
     height:auto;
     background-color: var(--terminal);
 }
+
 
 .badge{
     transform: skewX(-10deg);
