@@ -1,0 +1,137 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root{
+    height: 100%;
+    --main-text-accent:rebeccapurple;
+    --badge-boder: 5px solid rgba(190,130,190);
+    --badge-bg:rgba(150,40,150,0.7);
+    --terminal: rgb(20,20,20,0.7);
+    --terminal-border: 1px solid grey;
+    --danger:red;
+    --cursor-flicker: flick 0.7s infinite;
+    }
+
+@font-face {
+    font-family: 'Quicksand Book';
+    src: url('../fonts/QuicksandBook-Regular.woff2') format('woff2'),
+        url('../fonts/QuicksandBook-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+a{
+    text-decoration: none;
+}
+    
+
+nav{
+    position: fixed;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: 0.2s;
+    padding: 5px 15px;
+    gap: 15px;
+    width: 100%;
+    z-index: 1;
+}
+    
+.command{
+    padding:5px;
+    border: none;
+    background-color: transparent;
+    text-transform: lowercase;
+    color: white;
+    transition: 0.2s;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Quicksand Book' ;
+    width: 100%;
+    text-align: start;
+    }
+
+.command::before{
+    content: "_";
+    color: var(--main-text-accent);
+}
+
+.command:hover{
+   outline: var(--terminal-border);
+}
+
+.command:hover::before{
+    content: "site: $ cd ./";
+    color: var(--main-text-accent);
+}
+
+.command:hover::after{
+    content: "|";
+    animation: var(--cursor-flicker) ;
+}
+
+nav > a:not(:first-child){
+    display: none;
+}
+
+nav > .command:first-of-type::before{
+    content: "./";
+}
+
+nav:hover{
+    a{
+        display: block;
+    }
+    height:auto;
+    background-color: var(--terminal);
+}
+
+.badge{
+    transform: skewX(-10deg);
+    font-size: clamp(2.2rem, 10vmin, 5rem);
+    font-family: Arial;
+    color: white;
+    text-transform: lowercase;
+    font-weight: bold;
+    padding: 10px;
+    border: var(--badge-boder);
+    background-color: var(--badge-bg);
+    width: max-content;
+}
+
+.badge::before{
+    content: "$";
+}
+
+.badge::after{
+    content: "|";
+    animation: var(--cursor-flicker);
+}
+
+.small{
+    font-size: clamp(1.6rem, 8vmin, 4.2rem)
+}
+
+@keyframes move {
+    0%   { transform: scale(1)   translate(10px, -30px); }
+    38%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
+    40%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(160deg); }
+    78%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
+    80%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
+    100% { transform: scale(1)   translate(10px, -30px); }
+  }
+
+  @keyframes flick{
+    0%{opacity: 0;}
+    25%{opacity: 0;}
+    50%{opacity: 0;}
+    75%{opacity: 1;}
+    100%{opacity: 1;}
+  }
