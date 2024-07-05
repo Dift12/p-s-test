@@ -4,24 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/shared.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://kit.fontawesome.com/cd4f8939d4.js" crossorigin="anonymous"></script>
+    <script src="./js/showCorrectNavItem.js" defer></script>
+
+
+    <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.3.1/jquery.marquee.min.js' defer></script>
+
+
     <title>DIFT12</title>
 </head>
 <body>
-    <nav>
-        <a href="#" class="command" id="me">me</a>
-        <a href="#" class="command" id="work">work</a>
-        <a href="#" class="command" id="stack">stack</a>
-        <a href="#" class="command" id="contact">contact</a>
-    </nav>
+        <nav>
+            <a href="#hero" class="command active">me</a>
+            <a href="#work" class="command">work</a>
+            <a href="#stack" class="command">stack</a>
+            <a href="#contact" class="command">contact</a>
+        </nav>
+
 
     <main>
-        <section class="hero">
-            <h1 class="badge">
+        <section id="hero">
+
+            <h1 class="badge" >
                 whoami
             </h1>
-        </section>
+            
+                <p>Hi there! My name's DIFT12 , i'm an aspiring web developer based in argentinam learning webdev as a hobby
+                    and programming in general in my freetime. I'm currently looking for
+                    a first experience as a developer to make my knowledge grow.
+                </p>
+          
 
+            <a href="#contact">
+                Let's get in touch!
+            </a>
+            
+        </section>
+        <section id="work">
+            <div class="wrapper">
+                <h2 class="badge small">
+                    work
+                </h2>
+                <p>Here are some of the projects i've build lately</p>
+            </div>
+                <div class="display">
+
+                </div>
+           
+        </section>
+        <section id="stack">
+            <h2 class="badge small">
+                stack
+            </h2>
+            <p>What do i work with</p>
+
+            <div class="wrapper">
+                <h3>Main</h3>
+                <ul class="stack-list">
+                    <li>Javascript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>React</li>
+                    <li>Webpack</li>
+                    <li>Git</li>
+                    <li>Github</li>
+                    <li>NPM</li>
+                </ul>
+            </div>
+
+            <div class="wrapper">
+                <h3>Things i've touched</h3>
+                <ul class="stack-list">
+                    <li>C</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+
+        </section>
+        <section  id="contact">
+            <h2 class="badge small">
+                contact
+            </h2>
+            <div class="wrapper">
+                <p>Let's get in touch!</p>
+                <div class="contact-items">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+                </div>
+                <p>or get a <a href="./docs/CV-Lo.pdf" target="_blank">copy of my C.V.</a> </p>
+            </div>
+
+        </section>
     </main>
+
+
+
+
+
+    <div class="blob-filter" style="transform: translate(0,0);">
+
+        <div class="lamp">
+            <div class="blob">
+               <!-- This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">
+                <path d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"/>
+            </svg>
+            </div>
+            <!--CLONE THIS WITH JS TO AVOID REPETITION -->
+            <div class="blob-2">
+                <!--This SVG is from https://codepen.io/Ali_Farooq_/pen/gKOJqx -->
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">
+                    <path d="M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z"/>
+                </svg>
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="goo">
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+              </filter>
+            </defs>
+          </svg>
+    </div> 
+
 
 </body>
 </html>
