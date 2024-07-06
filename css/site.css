@@ -207,6 +207,7 @@ nav:hover{
     background-color: #ff3701;
     background-image: url(../filters/b3.svg);
     background-repeat: repeat-y;
+    background-attachment: fixed;
 }
 
 #stack > div{
