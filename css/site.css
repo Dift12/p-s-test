@@ -1,21 +1,20 @@
 :root{
     scroll-behavior: smooth;
     height: 100%;
-    --main-text-accent:rebeccapurple;
-    --badge-boder: 5px solid rgba(190,130,190);
-    --badge-bg:rgba(150,40,150,0.7);
-    --terminal: rgb(20,20,20,0.7);
-    --terminal-border: 1px solid grey;
-    --danger:red;
     --cursor-flicker: flick 0.7s infinite;
-    }
-
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --main-dark:rgb(10,10,15);
+    --light-bg:orange;
+    --dark-badge:rebeccapurple;
+    --light-badge:rgb(10,10,15);
+    --dark-accent:rebeccapurple;
+    --text-light:white;
+    --text-dark:black;
+    --light-blob:orange;
+    --dark-blob: rgb(10,10,10);
+    --light-grid: 76px 76px,76px 76px;
+    --dark-grid: 100px 100px,100px 100px;
 }
+
 
 
 @font-face {
@@ -27,39 +26,30 @@
     font-display: swap;
 }
 
-body{
-    background-color: rgb(10,10,15)
 
-    background-attachment: fixed;
+body{
+    background-color: var(--light-bg);
     position: relative;
     z-index: -3;
-
-    -webkit-box-shadow: -1px 150vh 180px -200px rgba(10,10,15,1) inset;
-
     background-attachment:fixed;
-
+    background-image:linear-gradient(to bottom,transparent 99%,#1f0f2e),linear-gradient(to right, transparent 99%,#1f0f2e 100%); 
+    background-size:var(--light-grid)
 }
 
-body {
-    background-image:
-      linear-gradient(
-        to bottom,
-        transparent 99%,
-        #1f0f2e),
-      linear-gradient(
-        to right, 
-        rgb(10,10,15) 99%,
-        #1f0f2e 100%);
-    background-size:
-      100px 100px,
-      100px 100px;
 
-  }
-
-a{
-    text-decoration: none;
+section{
+    min-height: 100vh;
+    max-width: 105ch;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    display: flex;
+    gap: 30px;
 }
-    
+
+p{
+    font-family: "Quicksand Book";
+}
 
 nav{
     position: fixed;
@@ -73,39 +63,35 @@ nav{
     gap: 15px;
     width: 100%;
     z-index: 1;
+    background:whitesmoke;
 }
     
-.command{
+.nav-link{
     padding:5px;
     border: none;
     background-color: transparent;
     text-transform: lowercase;
-    color: white;
-    transition: 0.2s;
+    color: var(--text-dark);
     font-size: 1.3rem;
     font-weight: bold;
     font-family: 'Quicksand Book' ;
-    width: 100%;
     text-align: start;
     }
 
-.command::before{
-    content: "_";
-    color: var(--main-text-accent);
+.nav-link:hover::before{
+    content: "go to ";
+    color: red;
+    font-family: Arial;
 }
 
-.command:hover{
-   outline: var(--terminal-border);
-}
-
-.command:hover::before{
-    content: "site: $ cat ./";
-    color: var(--main-text-accent);
-}
-
-.command:hover::after{
+.nav-link:hover::after{
     content: "|";
     animation: var(--cursor-flicker) ;
+}
+
+.underscore::before{
+    content: "_";
+    color: #ff3701;
 }
 
 nav > a:not(.active){
@@ -113,7 +99,8 @@ nav > a:not(.active){
 }
 
 nav > .active::before{
-    content: "./";
+    content: "● " !important;
+    color: #ff3701 !important;
 }
 
 nav:hover{
@@ -121,59 +108,145 @@ nav:hover{
         display: block;
     }
     height:auto;
-    background-color: var(--terminal);
 }
 
 .badge{
-    font-size: clamp(2.2rem, 10vmin, 5rem);
     font-family: Arial;
     color: white;
     text-transform: lowercase;
     font-weight: bold;
     padding: 10px;
-   /* border: var(--badge-boder);*/
-   /* background-color: var(--badge-bg);*/
-    background-color: rebeccapurple;
+    background-color: var(--light-badge);
     width: max-content;
     margin: 15px 0px;
 }
 
-.badge::before{
+.prompt::before{
     content: "$";
 }
 
-.badge::after{
+.flicker::after{
     content: "|";
     animation: var(--cursor-flicker);
 }
 
-.small{
-    font-size: clamp(1.6rem, 8vmin, 4.2rem);
-    background-color: rebeccapurple;
+#hero{
+    flex-direction: column;
+    justify-content: center;
 }
 
-/*If an element has a badge and small class then down add bg color to it,
-this rule has higher specifity*/
+#hero > h1.badge{
+    width: 100%;
+    transform: rotate(-1deg);
+}
 
+#hero > a{
+    transition: 0.1s;
+}
+
+#hero > a.badge:hover{
+    background-color: whitesmoke;
+    color: black;
+    filter: drop-shadow(5px 5px 0px black);
+}
+
+#work{
+    flex-direction: column;
+}
 
 .display{
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 30px;
 }
 
 .card{
-    
+    transition: 0.2s;
+    background-color: whitesmoke;
+    filter: drop-shadow(7px 7px 0px black);
+}
+
+.card > img{
+    width: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 15px;
+}
+
+.title.badge{
+    text-transform: uppercase;
+}
+
+.made{
+    margin-top: auto;
+}
+
+.made > ul {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.card:hover{
+    filter: none;
+}
+
+#contact{
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#stack{
+    max-width: none;
+    width: 100% !important; /*Override section max-width property*/
+    background-color: #ff3701;
+    background-image: url(../filters/b3.svg);
+    background-repeat: repeat-y;
+}
+
+#stack > div{
+    margin-top: 10px;
+    width: 105ch;
+    background-color: whitesmoke;
+    filter: drop-shadow(8px 8px 0px #3f5ef4);
+    margin: auto;
+    padding: 10px;
+}
+
+#stack > div > div {
+    margin-top: 10px;
+}
+
+#stack ul{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+}
+
+#stack ul li{
+    border-bottom: 1px solid ;
+    color: #ff3701;
+    border-bottom: 3px solid #ff3701;
+    padding: 10px;
+    font-family: "Quicksand Book";
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 .contact-items{
     display: flex;
     gap: 20px;
-    margin: 10px;
+    margin: 10px 0px;
 }
 
 .contact-items i{
     font-size: 1.5rem;
-    color: white;
+    color: var(--text-dark);
 }
 
 .contact-items i:hover{
@@ -182,9 +255,6 @@ this rule has higher specifity*/
     color: blueviolet;
 }
 
-.wrapper{
-    padding: 15px;
-}
 
 .blob-filter{
     filter: url("#goo");
@@ -205,7 +275,7 @@ this rule has higher specifity*/
     position: absolute;
     top: 0;
     left: 0;
-    fill: rgb(10,10,10);
+    fill: var(--light-blob);
     width: 50vmax;
     z-index: -1;
     animation: move 40s ease-in-out infinite;
@@ -221,7 +291,7 @@ this rule has higher specifity*/
     position: absolute;
     top: 0;
     left: 0;
-    fill: rgb(10,10,10);
+    fill: var(--light-blob);
     width: 10vmax;
     z-index: -1;
     animation:  move 60s ease-in-out infinite ;
@@ -236,12 +306,12 @@ this rule has higher specifity*/
     78%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
     80%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
     100% { transform: scale(1)   translate(10px, -30px); }
-  }
+}
 
-  @keyframes flick{
+@keyframes flick{
     0%{opacity: 0;}
     25%{opacity: 0;}
     50%{opacity: 0;}
     75%{opacity: 1;}
     100%{opacity: 1;}
-  }
+}

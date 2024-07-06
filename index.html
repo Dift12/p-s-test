@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/shared.css">
-    <link rel="stylesheet" href="./css/index.css">
+
+    <link rel="stylesheet" href="./css/common.css">
+
+    <link rel="stylesheet" href="./css/site.css">
+
     <script src="https://kit.fontawesome.com/cd4f8939d4.js" crossorigin="anonymous"></script>
     <script src="./js/showCorrectNavItem.js" defer></script>
 
@@ -16,75 +19,122 @@
 </head>
 <body>
         <nav>
-            <a href="#hero" class="command active">me</a>
-            <a href="#work" class="command">work</a>
-            <a href="#stack" class="command">stack</a>
-            <a href="#contact" class="command">contact</a>
+            <a href="#hero" class="nav-link command active underscore">me</a>
+            <a href="#work" class="nav-link command underscore" >work</a>
+            <a href="#stack" class="nav-link command underscore">stack</a>
+            <a href="#contact" class="nav-link command underscore">contact</a>
         </nav>
 
 
     <main>
+
         <section id="hero">
+                    <h1 class="badge prompt flicker" >
+                        whoami
+                    </h1>
 
-            <h1 class="badge" >
-                whoami
-            </h1>
-            
-                <p>Hi there! My name's DIFT12 , i'm an aspiring web developer based in argentinam learning webdev as a hobby
-                    and programming in general in my freetime. I'm currently looking for
-                    a first experience as a developer to make my knowledge grow.
-                </p>
-          
+                    <p>Hi there! My name's DIFT12 , i'm an aspiring web developer based in argentinam learning webdev as a hobby
+                            and programming in general in my freetime. I'm currently looking for
+                            a first experience as a developer to make my knowledge grow.
+                    </p>
 
-            <a href="#contact">
-                Let's get in touch!
-            </a>
-            
+                    <a href="#contact" class="badge">Let's get in touch!</a>
         </section>
+
         <section id="work">
             <div class="wrapper">
-                <h2 class="badge small">
+                <h2 class="badge prompt flicker">
                     work
                 </h2>
                 <p>Here are some of the projects i've build lately</p>
             </div>
                 <div class="display">
+                   <div class="card">
+                        <img src="./images/site.png" alt="Site">
+                        <div class="card-body">
+                            <p class="title badge">
+                                Site 32.
+                            </p>
+                            <p class="info">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem impedit itaque iste ex quos molestiae? Quisquam explicabo, nisi suscipit doloremque quos at ab porro.
+                            </p>
 
+                            <div class="made">
+                                <p>made with</p>
+                                <ul>
+                                    <li>React</li>
+                                    <li>CSS</li>
+                                </ul>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="card">
+                    <img src="./images/site.png" alt="Site">
+                    <div class="card-body">
+                        <p class="title badge">
+                            Site 32.
+                        </p>
+                        <p class="info">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem impedit itaque iste ex quos molestiae? Quisquam explicabo, nisi suscipit doloremque quos at ab porro.
+                        </p>
+
+                        <div class="made">
+                            <p>made with</p>
+                            <ul>
+                                <li>React</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                    </div>
+               </div>
+
+               <div class="card">
+                <img src="./images/site.png" alt="Site">
+                <div class="card-body">
+                    <p class="title badge">
+                        Site 32.
+                    </p>
+                    <p class="info">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem impedit itaque iste ex quos molestiae? Quisquam explicabo, nisi suscipit doloremque quos at ab porro.
+                    </p>
+
+                    <div class="made">
+                        <p>made with</p>
+                        <ul>
+                            <li>React</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
                 </div>
            
         </section>
         <section id="stack">
-            <h2 class="badge small">
-                stack
-            </h2>
-            <p>What do i work with</p>
 
-            <div class="wrapper">
-                <h3>Main</h3>
-                <ul class="stack-list">
-                    <li>Javascript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>React</li>
-                    <li>Webpack</li>
-                    <li>Git</li>
-                    <li>Github</li>
-                    <li>NPM</li>
-                </ul>
+            <div>
+                <h2 class="badge prompt flicker">
+                    stack
+                </h2>
+                <p>What do i work with</p>
+                <div>
+                    <h3>Main</h3>
+                    <ul class="stack-list">
+                        <li>Javascript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>React</li>
+                        <li>Webpack</li>
+                        <li>Git</li>
+                        <li>Github</li>
+                        <li>NPM</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="wrapper">
-                <h3>Things i've touched</h3>
-                <ul class="stack-list">
-                    <li>C</li>
-                    <li>Python</li>
-                    <li>SQL</li>
-                </ul>
-            </div>
-
         </section>
         <section  id="contact">
-            <h2 class="badge small">
+            <h2 class="badge prompt flicker">
                 contact
             </h2>
             <div class="wrapper">
@@ -97,6 +147,7 @@
                 </div>
                 <p>or get a <a href="./docs/CV-Lo.pdf" target="_blank">copy of my C.V.</a> </p>
             </div>
+
 
         </section>
     </main>
