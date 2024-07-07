@@ -101,6 +101,7 @@ nav > a:not(.active){
 nav > .active::before{
     content: "● " !important;
     color: #ff3701 !important;
+    animation: var(--cursor-flicker);
 }
 
 nav:hover{
