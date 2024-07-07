@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
     
 
-    if (isSafariMobile) {
 
+    if (isSafariMobile) {
       let fart=new Audio("../sounds/fart.mp3");
 
       /*Opefully this gets around the autoplay policy, and the user will interact with the site first*/
