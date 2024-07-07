@@ -316,3 +316,14 @@ nav:hover{
     75%{opacity: 1;}
     100%{opacity: 1;}
 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-device-width: 375px) and (max-device-width: 812px) {
+    body {
+      background-attachment: scroll !important;
+    }
+
+    .blob, .blob-2{
+        animation: none;
+    }
+
+  }
